@@ -49,6 +49,15 @@ function useTasks () {
         if (desc) newTasks[group][indexTask].desc = desc
         break
       }
+      case 'add': {
+        if (!title) break
+
+        newTasks[group].push({
+          id: 20,
+          title: title,
+          desc: desc
+        })
+      }
     }
 
     setTasks(newTasks)
