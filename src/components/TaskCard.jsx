@@ -15,11 +15,12 @@ export function TaskCard ({ tasks, cardTitle, changeTask, group, setEditingTask 
             title={task.title}
             desc={task.desc}
             changeTask={changeTask}
+            setEditingTask={setEditingTask}
             group={group}
           />
         ))
       }
-      <div onClick={() => setEditingTask({editing: true, group: group})} className='flex flex-row w-full gap-1 bg-slate-400/35 hover:bg-slate-400/50 p-2 rounded-md cursor-pointer justify-center transition'>
+      <div onClick={() => setEditingTask({editing: true, group: group, id: undefined})} className='flex flex-row w-full gap-1 bg-slate-400/35 hover:bg-slate-400/50 p-2 rounded-md cursor-pointer justify-center transition'>
         <AddIcon />
       </div>
     </section>

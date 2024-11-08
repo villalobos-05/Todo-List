@@ -3,7 +3,7 @@ import { DeleteIcon } from './icons/DeleteIcon'
 import { EditIcon } from './icons/EditIcon'
 import { RightArrow } from './icons/RightArrow'
 
-export function Task ({ id, title, desc, changeTask, group }) {
+export function Task ({ id, title, desc, changeTask, setEditingTask, group }) {
   const [showDesc, setShowDesc] = useState(false)
 
   return (
@@ -14,7 +14,7 @@ export function Task ({ id, title, desc, changeTask, group }) {
       <div className='flex justify-between items-center w-full gap-1'>
         <p className='text-xl text-slate-200 truncate'>{title}</p>
         <div className='flex items-stretch gap-1'>
-          <span onClick={() => changeTask({ id, group, action: 'edit', title: 'Titulo prueba', desc: 'Desc prueba' })}><EditIcon /></span>
+          <span onClick={() => setEditingTask({editing: true, group: group, id: id})}><EditIcon /></span>
           <span onClick={() => changeTask({ id, group, action: 'delete' })}><DeleteIcon /></span>
           <span onClick={() => changeTask({ id, group, action: 'move' })}><RightArrow /></span>
         </div>

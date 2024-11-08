@@ -68,10 +68,10 @@ function useTasks () {
 
 export function App () {
   const { tasks, loading, changeTask } = useTasks()
-  const [editingTask, setEditingTask] = useState({editing: false, group: undefined})
+  const [editingTask, setEditingTask] = useState({editing: false, group: undefined, id: undefined})
 
   useEffect(() => {
-    setEditingTask({editing: false, group: undefined})
+    setEditingTask({editing: false, group: undefined, id: undefined})
   }, [tasks])
 
   return (
@@ -97,7 +97,13 @@ export function App () {
       </main>
 
       {editingTask.editing && (
-        <EditTask title='Title' desc='Desc' group={editingTask.group} changeTask={changeTask} />
+        <EditTask
+          title='Title'
+          desc='Desc'
+          group={editingTask.group}
+          id={editingTask.id}
+          changeTask={changeTask}
+        />
       )}
     </div>
   )
