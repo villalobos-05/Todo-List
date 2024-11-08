@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { TaskCard } from './components/TaskCard'
 
-import taskstodo from './mocks/tasks.json'
+import taskstodo from './mocks/tasksEmpty.json'
 import { cardNames, cards } from './constants'
 import { EditTask } from './components/EditTask'
 
