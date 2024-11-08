@@ -54,8 +54,8 @@ function useTasks () {
 
         newTasks[group].push({
           id: Math.floor(Math.random() * 100000) * Date.now(),
-          title: title,
-          desc: desc
+          title,
+          desc
         })
       }
     }
@@ -68,10 +68,10 @@ function useTasks () {
 
 export function App () {
   const { tasks, loading, changeTask } = useTasks()
-  const [editingTask, setEditingTask] = useState({editing: false, group: undefined, id: undefined})
+  const [editingTask, setEditingTask] = useState({ editing: false, group: undefined, id: undefined })
 
   useEffect(() => {
-    setEditingTask({editing: false, group: undefined, id: undefined})
+    setEditingTask({ editing: false, group: undefined, id: undefined })
   }, [tasks])
 
   return (
