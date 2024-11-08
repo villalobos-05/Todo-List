@@ -4,3 +4,4 @@ export const cardNames = {
   doing: 'TASKS DOING',
   finished: 'TASKS FINISHED'
 }
+export const tasksStorage = 'tasks'

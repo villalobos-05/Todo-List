@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { TaskCard } from './components/TaskCard'
 
 import taskstodo from './mocks/tasksEmpty.json'
-import { cardNames, cards } from './constants'
+import { cardNames, cards, tasksStorage } from './constants'
 import { EditTask } from './components/EditTask'
 
 function useTasks () {
@@ -12,7 +12,7 @@ function useTasks () {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        setTasks(taskstodo)
+        setTasks(JSON.parse(window.localStorage.getItem(tasksStorage)) ?? taskstodo)
       } catch (error) {
         console.log(error)
       } finally {
@@ -61,6 +61,7 @@ function useTasks () {
     }
 
     setTasks(newTasks)
+    window.localStorage.setItem(tasksStorage, JSON.stringify(newTasks))
   }
 
   return { tasks, loading, changeTask }
