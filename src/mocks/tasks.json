@@ -1,0 +1,68 @@
+{
+    "todo": [
+        {
+            "id": "1",
+            "title": "Comprar alimentos",
+            "desc": "Hacer la lista de la compra y pasar por el supermercado."
+        },
+        {
+            "id": "2",
+            "title": "Llamar al médico",
+            "desc": "Pedir cita para el chequeo anual."
+        },
+        {
+            "id": "3",
+            "title": "Hacer la colada",
+            "desc": "Lavar la ropa blanca y de color."
+        },
+        {
+            "id": "4",
+            "title": "Preparar presentación",
+            "desc": "Crear diapositivas para la reunión del jueves."
+        }
+    ],
+    "doing": [
+        {
+            "id": "5",
+            "title": "Estudiar para el examen",
+            "desc": "Revisar los apuntes y hacer ejercicios prácticos de matemáticas."
+        },
+        {
+            "id": "6",
+            "title": "Escribir un informe",
+            "desc": "Redactar el informe sobre el proyecto en el que estoy trabajando."
+        },
+        {
+            "id": "7",
+            "title": "Entrenar en el gimnasio",
+            "desc": "Hacer una rutina de fuerza y cardio."
+        },
+        {
+            "id": "8",
+            "title": "Limpiar la casa",
+            "desc": "Organizar el salón y limpiar el baño."
+        }
+    ],
+    "finished": [
+        {
+            "id": "9",
+            "title": "Enviar la tarea",
+            "desc": "He enviado el trabajo de clase por correo."
+        },
+        {
+            "id": "10",
+            "title": "Pagar las facturas",
+            "desc": "He pagado la electricidad y el agua."
+        },
+        {
+            "id": "11",
+            "title": "Leer un libro",
+            "desc": "Terminé de leer 'Cien años de soledad'."
+        },
+        {
+            "id": "12",
+            "title": "Cocinar la cena",
+            "desc": "Preparé una lasaña y ensalada para la cena."
+        }
+    ]
+}
