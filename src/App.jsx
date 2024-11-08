@@ -27,7 +27,7 @@ function useTasks () {
     const newTasks = { ...tasks }
     const indexTask = tasks[group].findIndex(task => task.id === id)
 
-    if (indexTask === -1) throw new Error(`Task with id ${id} was not found!`)
+    if (indexTask === -1 && action !== 'add') throw new Error(`Task with id ${id} was not found!`)
 
     switch (action) {
       case 'move': {
@@ -53,7 +53,7 @@ function useTasks () {
         if (!title) break
 
         newTasks[group].push({
-          id: 20,
+          id: Math.floor(Math.random() * 100000) * Date.now(),
           title: title,
           desc: desc
         })
@@ -68,7 +68,11 @@ function useTasks () {
 
 export function App () {
   const { tasks, loading, changeTask } = useTasks()
-  const [editingTask, setEditingTask] = useState(false)
+  const [editingTask, setEditingTask] = useState({editing: false, group: undefined})
+
+  useEffect(() => {
+    setEditingTask({editing: false, group: undefined})
+  }, [tasks])
 
   return (
     <div className='mt-20 bg-stone-200 p-12 grid gap-y-10 max-w-fit rounded-lg content-center place-items-center'>
@@ -85,14 +89,15 @@ export function App () {
                     cardTitle={cardNames[card]}
                     changeTask={changeTask}
                     group={card}
+                    setEditingTask={setEditingTask}
                   />
                 ))
               )
         }
       </main>
 
-      {editingTask && (
-        <EditTask title='Title' desc='Desc' />
+      {editingTask.editing && (
+        <EditTask title='Title' desc='Desc' group={editingTask.group} changeTask={changeTask} />
       )}
     </div>
   )
