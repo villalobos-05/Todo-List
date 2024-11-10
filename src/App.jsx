@@ -14,9 +14,9 @@ export function App () {
   }, [tasks])
 
   return (
-    <div className='mt-20 bg-stone-200 p-12 grid gap-y-10 max-w-fit rounded-lg content-center place-items-center'>
-      <h1 className='text-5xl text-center font-black text-slate-800'>~ TODO LIST ~</h1>
-      <main className='flex justify-center gap-x-16'>
+    <div className='bg-slate-900 p-12 flex flex-col gap-y-24 min-h-screen w-screen rounded-lg items-center'>
+      <h1 className='text-5xl text-center font-black text-slate-200'>~ TODO LIST ~</h1>
+      <main className='grid grid-cols-3 gap-6 gap-x-16'>
         {
           loading
             ? <h1 className='text-2xl'>Cargando...</h1>
