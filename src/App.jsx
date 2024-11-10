@@ -14,7 +14,7 @@ export function App () {
   }, [tasks])
 
   return (
-    <div className='bg-slate-900 p-12 flex flex-col gap-y-24 min-h-screen w-screen rounded-lg items-center'>
+    <div className='bg-slate-900 p-12 flex flex-col gap-y-24 min-h-screen w-screen rounded-lg items-center relative'>
       <h1 className='text-5xl text-center font-black text-slate-200'>~ TODO LIST ~</h1>
       <main className='grid grid-cols-3 gap-6 gap-x-16'>
         {
@@ -36,13 +36,15 @@ export function App () {
       </main>
 
       {editingTask.editing && (
-        <EditTask
-          title='Title'
-          desc='Desc'
-          group={editingTask.group}
-          id={editingTask.id}
-          changeTask={changeTask}
-        />
+        <div className='fixed inset-0 flex items-center justify-center bg-zinc-900/5 backdrop-blur-sm'>
+          <EditTask
+            title='Title'
+            desc='Desc'
+            group={editingTask.group}
+            id={editingTask.id}
+            changeTask={changeTask}
+          />
+        </div>
       )}
     </div>
   )
